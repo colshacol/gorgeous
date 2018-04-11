@@ -9,6 +9,8 @@ export const isJSON = (type) => {
 export const handleJSON = async (req, res) => {
 	const { code, config } = await json(req);
 
+	console.log({ code, config });
+
 	// TODO: body validation.
 
 	return {

@@ -4,7 +4,7 @@ export const DEFAULT_CONFIG = {
 	trailingComma: 'none',
 	printWidth: 80,
 	singleQuote: true,
-	semi: false,
+	semi: true,
 	arrowParens: 'always',
 	jsxBracketSameLine: false,
 	bracketSpacing: true,

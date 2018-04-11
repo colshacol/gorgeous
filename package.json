@@ -1,11 +1,15 @@
 {
 	"name": "gorgeous",
 	"version": "0.0.1",
-	"main": "lib/index.js",
+	"main": "dist/index.js",
 	"license": "MIT",
 	"scripts": {
-		"start": "micro",
-		"build": "babel src --out-dir lib",
+		"start": "cross-env BABEL_ENV=service micro",
+		"nodeTest": "node lib/cjs/client",
+		"buildClient": "BABEL_ENV=client rollup -c",
+		"buildService": "BABEL_ENV=service babel server --out-dir ./dist",
+		"_webpack": "BABEL_ENV=client webpack --config ./webpack.config --mode development ./src/client -o lib/client.js",
+		"buildAll": "npm run buildClient && npm run buildService",
 		"test": "jest"
 	},
 	"dependencies": {
@@ -30,16 +34,34 @@
 		"@babel/plugin-proposal-unicode-property-regex": "^7.0.0-beta.41",
 		"@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.44",
 		"@babel/plugin-syntax-import-meta": "^7.0.0-beta.41",
+		"@babel/plugin-transform-runtime": "^7.0.0-beta.44",
 		"@babel/polyfill": "^7.0.0-beta.41",
 		"@babel/preset-env": "^7.0.0-beta.41",
 		"@babel/preset-flow": "^7.0.0-beta.42",
 		"@babel/preset-react": "^7.0.0-beta.41",
 		"@babel/preset-stage-0": "^7.0.0-beta.41",
 		"@babel/register": "^7.0.0-beta.41",
+		"@babel/runtime": "^7.0.0-beta.44",
 		"babel-plugin-module-resolver": "^3.1.0",
+		"cross-env": "^5.1.4",
+		"dotenv": "^5.0.1",
 		"flow-bin": "^0.68.0",
 		"jest": "^22.4.3",
 		"micro": "^9.1.4",
-		"prettier": "^1.11.1"
+		"micro-cors": "^0.1.0",
+		"micro-dev": "^2.2.2",
+		"node-fetch": "^2.1.2",
+		"prettier": "^1.11.1",
+		"react": "^16.3.1",
+		"regenerator-runtime": "^0.11.1",
+		"rollup-plugin-babel": "^4.0.0-beta.4",
+		"webpack": "^4.5.0",
+		"webpack-cli": "^2.0.14"
+	},
+	"devDependencies": {
+		"babel-loader": "^8.0.0-beta.2",
+		"rollup": "^0.57.1",
+		"rollup-plugin-commonjs": "^9.1.0",
+		"rollup-plugin-node-resolve": "^3.3.0"
 	}
 }
