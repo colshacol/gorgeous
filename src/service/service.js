@@ -1,7 +1,7 @@
 // const { isText, handleText } = require('./utilities/handleText');
-const { isJSON, handleJSON } = require('./utilities/handleJSON');
+import { isJSON, handleJSON } from './utilities/handleJSON';
 
-module.exports = async (req, res) => {
+export const service = async (req, res) => {
 	const type = req.headers['content-type'];
 
 	// TODO: content-type validation.

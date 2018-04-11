@@ -1,4 +1,4 @@
-module.exports.WITHOUT_CONFIG = {
+export const WITHOUT_CONFIG = {
 	REQUEST: {
 		headers: {
 			'content-type': 'application/json'
@@ -11,7 +11,7 @@ module.exports.WITHOUT_CONFIG = {
 		"const playWithFire = (cat) => {\n\twhile (true) {\n\t\tconsole.log('it is true....')\n\t}\n}\n\nplayWithFire()\n"
 };
 
-module.exports.WITH_CONFIG = {
+export const WITH_CONFIG = {
 	REQUEST: {
 		headers: {
 			'content-type': 'application/json'

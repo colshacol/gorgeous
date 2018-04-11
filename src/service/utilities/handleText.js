@@ -1,18 +1,16 @@
-const prettier = require('prettier');
-const { text } = require('micro');
-
+import prettier from 'prettier';
+import { text } from 'micro';
+const { DEFAULT_CONFIG } = require('../consts');
 // NOTE: Not currently supported.
 
 // TODO: Determine if 'text/plain' support is necessary and,
 // if so, how to do it!
 
-const { DEFAULT_CONFIG } = require('../consts');
-
-module.exports.isText = (type) => {
+export const isText = (type) => {
 	return type === 'text/plain';
 };
 
-module.exports.handleText = async (req, res) => {
+export const handleText = async (req, res) => {
 	return {
 		pretty: prettier.format(await text(req), DEFAULT_CONFIG)
 	};

@@ -1,4 +1,4 @@
-module.exports.DEFAULT_CONFIG = {
+export const DEFAULT_CONFIG = {
 	parser: 'babylon',
 	tabWidth: 2,
 	trailingComma: 'none',
