@@ -5,6 +5,7 @@
 	"license": "MIT",
 	"scripts": {
 		"start": "micro",
+		"build": "npx babel src --out-dir lib",
 		"test": "jest"
 	},
 	"dependencies": {
