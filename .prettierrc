@@ -8,5 +8,5 @@
 	"arrowParens": "always",
 	"jsxBracketSameLine": false,
 	"bracketSpacing": true,
-	"useTabs": false
+	"useTabs": true
 }
