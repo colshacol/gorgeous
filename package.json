@@ -1,19 +1,18 @@
 {
 	"name": "gorgeous",
 	"version": "0.0.1",
-	"main": "dist/index.js",
+	"main": "server/entry.js",
 	"license": "MIT",
 	"scripts": {
-		"start": "cross-env BABEL_ENV=service micro",
-		"nodeTest": "node lib/cjs/client",
-		"buildClient": "BABEL_ENV=client rollup -c",
-		"buildService": "BABEL_ENV=service babel server --out-dir ./dist",
-		"_webpack": "BABEL_ENV=client webpack --config ./webpack.config --mode development ./src/client -o lib/client.js",
-		"buildAll": "npm run buildClient && npm run buildService",
+		"start": "npm run start:service",
+		"start:lib": "BABEL_ENV=client NODE_ENV=development npx webpack --config webpack.config.js --watch",
+		"start:service": "BABEL_ENV=service babel-node ./node_modules/.bin/micro-dev --silent",
+		"build:lib": "BABEL_ENV=client NODE_ENV=production npx webpack --config webpack.config.js",
+		"dev:start": "npm run start:lib & npm run start:service",
 		"test": "jest"
 	},
 	"dependencies": {
-		"@babel/cli": "^7.0.0-beta.41",
+		"@babel/cli": "^7.0.0-beta.44",
 		"@babel/core": "^7.0.0-beta.42",
 		"@babel/plugin-proposal-async-generator-functions": "^7.0.0-beta.41",
 		"@babel/plugin-proposal-class-properties": "^7.0.0-beta.41",
@@ -59,9 +58,11 @@
 		"webpack-cli": "^2.0.14"
 	},
 	"devDependencies": {
+		"@babel/node": "^7.0.0-beta.44",
 		"babel-loader": "^8.0.0-beta.2",
 		"rollup": "^0.57.1",
 		"rollup-plugin-commonjs": "^9.1.0",
-		"rollup-plugin-node-resolve": "^3.3.0"
+		"rollup-plugin-node-resolve": "^3.3.0",
+		"string-replace-loader": "^2.1.1"
 	}
 }

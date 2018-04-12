@@ -36,12 +36,6 @@
 
 		"presets": [["@babel/preset-env", { "modules": false }], "@babel/preset-flow"],
 		"plugins": [
-			["@babel/plugin-transform-runtime", {
-				"helpers": false,
-				"polyfill": false,
-				"regenerator": true,
-				"moduleName": "@babel/runtime"
-			}],
 			"@babel/plugin-proposal-optional-chaining",
 			"@babel/plugin-proposal-pipeline-operator",
 			"@babel/plugin-proposal-function-bind",
