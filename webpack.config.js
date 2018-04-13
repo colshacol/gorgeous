@@ -12,7 +12,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, 'lib/dist'),
 		filename: 'index.js',
-		// library: 'gorgeous',
+		library: 'gorgeous',
 		libraryTarget: 'umd',
 		umdNamedDefine: true
 	},
