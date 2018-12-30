@@ -33,7 +33,7 @@ yarn add gorgeous
 
 When you install `gorgeous`, you're installing the package that allows you to interface with the micro-service, not the server itself, obviously. (Although a distributable `gorgeous` server package is on the roadmap.)
 
-`gorgeous` exposes a method `format`, just like `prettier`. This is the method that makes the request to the `gorgeous` server and returns your clean ass code. _Some might even say that your code is... on fleek._
+`gorgeous` exposes a method `format`, just like `prettier`. This is the method that makes the request to the `gorgeous` server and returns your cleannn code. _Some might even say that your code is... on fleek._
 
 
 ```js
@@ -65,5 +65,5 @@ prettier("const\n\tfoo\n\t\t=`yolo`")
 
 ```sh
 yarn #install dependencies
-yarn dev:start # start that shit up
+yarn dev:start # start it up
 ```
