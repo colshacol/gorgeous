@@ -64,6 +64,6 @@ prettier("const\n\tfoo\n\t\t=`yolo`")
 ## Development
 
 ```sh
-yarn #install dependencies
+yarn # install dependencies
 yarn dev:start # start it up
 ```
